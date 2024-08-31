@@ -5,9 +5,38 @@ import { Handle, Position } from "reactflow";
 import WrapperNode from "./wrapperNode";
 
 export const TextNode = ({ id, data }) => {
+  
   const [currText, setCurrText] = useState(data?.text || "{{input}}");
-
+  // const [ controller , setController] = useState([]);
+  const checkForVariable =(data)=>{
+    console.log("data",data);
+    const len = data.length;
+    if(len>4){
+      if(data[0]=='{' && data[1] == '{'  && data[len-1]=='}' && data[len-2]=='}'){
+        const variable = data.slice(2,len-2);
+        console.log(variable,"varable");
+        return [true , variable];
+      }
+      return [ false ,null];
+    }
+  }
   const handleTextChange = (e) => {
+    const [ isVariable ,variable ] = checkForVariable(e.target.value);
+    if(isVariable)
+    {
+      console.log("check")
+      controller.push(
+        {
+          fieldType: "handle",
+          data: {
+            id: `${id}-output`,
+            type: "source",
+            position: Position.Left,
+          },
+        }
+      )
+
+    }
     setCurrText(e.target.value);
   };
 
