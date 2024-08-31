@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Handle } from "reactflow";
 import "./index.css";
 
 const WrapperNode = ({ controller }) => {
   return (
-  <div className="base-node-style">
+    <div className="base-node-style">
       <div class="button-wrapper">
         <div className="button">
           {controller.map((items) => {
