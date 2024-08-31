@@ -4,45 +4,50 @@ import "./index.css";
 
 const WrapperNode = ({ controller }) => {
   return (
-    <div style={{ width: 200, height: 80, border: "1px solid black" }}>
-      {controller.map((items) => {
-        switch (items.fieldType) {
-          case "handle":
-            return <Handle {...items.data} />;
+  <div className="base-node-style">
+      <div class="button-wrapper">
+        <div className="button">
+          {controller.map((items) => {
+            switch (items.fieldType) {
+              case "handle":
+                return <Handle {...items.data} />;
 
-          case "input":
-            return (
-              <div>
-                <label>
-                  Name:
-                  <input {...items.data} />
-                </label>
-              </div>
-            );
+              case "input":
+                return (
+                  <div>
+                    <label>
+                      Name:
+                      <input {...items.data} />
+                    </label>
+                  </div>
+                );
 
-          case "select":
-            return (
-              <label>
-                Type:
-                <select {...items.data}>
-                  {items.options.map((item) => (
-                    <option value={item.value}>{item.placeholder}</option>
-                  ))}
-                </select>
-              </label>
-            );
+              case "select":
+                return (
+                  <label>
+                    Type:
+                    <select {...items.data}>
+                      {items.options.map((item) => (
+                        <option value={item.value}>{item.placeholder}</option>
+                      ))}
+                    </select>
+                  </label>
+                );
 
-          case "text":
-            return (
-              <div key={items.data.id}>
-                <span>{items.data.text}</span>
-              </div>
-            );
+              case "text":
+                return (
+                  <div key={items.data.id}>
+                    <span>{items.data.text}</span>
+                  </div>
+                );
 
-          default:
-            return null;
-        }
-      })}
+              default:
+                return null;
+            }
+          })}
+        </div>
+        <div class="button-bg"></div>
+      </div>
     </div>
   );
   //   return (

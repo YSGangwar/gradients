@@ -2,37 +2,6 @@
 
 import { Handle, Position } from "reactflow";
 import WrapperNode from "./wrapperNode";
-
-// const data = (currName, handleNameChange) => [
-//   {
-//     fieldType: "handle",
-//     data: {
-//       id: `${id}-system`,
-//       type: "target",
-//       position: Position.Left,
-//       style: `${100 / 3}%`,
-//     },
-//   },
-//   {
-//     fieldType: "handle",
-//     data: {
-//       id: `${id}-system`,
-//       type: "target",
-//       position: Position.Left,
-//       style: `${100 / 3}%`,
-//     },
-//   },
-//   {
-//     fieldType: "input",
-//     data: {
-//       id: `${id}-system`,
-//       type: "text",
-//       value: { currName },
-//       onChange: { handleNameChange },
-//     },
-//   },
-// ];
-
 export const LLMNode = ({ id, data }) => {
   const controller = [
     { fieldType: "text", data: { id: "head", text: "LLM" } },
