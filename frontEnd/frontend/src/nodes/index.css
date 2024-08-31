@@ -1,6 +1,6 @@
 .base-node-style {
-     width: 200;
-     height: 80;
+     width: 200px;
+     height: 80px;
      border: 1px solid black;
 }
   
@@ -11,15 +11,15 @@
   
   .button {
     display: block;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 32px;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-weight: 500;
+    text-transform: capitalize;
     letter-spacing: 2px;
     padding: 16px 32px;
     background-color: black;
     color: white;
-      border-radius: 50px;
+    border-radius: 50px;
     border: 0px;
     cursor: pointer;
   }
